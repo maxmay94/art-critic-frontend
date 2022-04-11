@@ -8,6 +8,11 @@ import Profiles from './pages/Profiles/Profiles'
 import Reviews from './pages/Reviews/reviews'
 import * as authService from './services/authService'
 
+// const backgroundss = [
+//   'https://images.metmuseum.org/CRDImages/dp/original/DP821010.jpg',
+//   'https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg',
+//   'https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg'
+// ]
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -26,7 +31,6 @@ const App = () => {
 
   return (
     <>
-    {/* <div className="bg-cover bg-[url('https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg')]"> */}
     <div className="bg-cover bg-[url('https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg')]">
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
