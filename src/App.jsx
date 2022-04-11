@@ -5,7 +5,9 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
+import Reviews from './pages/Reviews/reviews'
 import * as authService from './services/authService'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -40,6 +42,10 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+        <Route 
+          path='/reviews/new'
+          element={user? <Reviews user={user} /> : <Navigate to='/login' />} 
         />
       </Routes>
     </div>
