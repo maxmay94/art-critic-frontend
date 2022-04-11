@@ -30,7 +30,7 @@ const LoginForm = props => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
+      className='text-gray-300 bg-gray-600/[.3] rounded p-3'
     >
       <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
@@ -41,6 +41,7 @@ const LoginForm = props => {
           value={formData.email}
           name="email"
           onChange={handleChange}
+          className='bg-black border-gray-600 rounded-sm'
         />
       </div>
       <div className={styles.inputContainer}>
@@ -52,6 +53,7 @@ const LoginForm = props => {
           value={formData.password}
           name="password"
           onChange={handleChange}
+          className='bg-black border-gray-600 rounded-sm'
         />
       </div>
       <div>

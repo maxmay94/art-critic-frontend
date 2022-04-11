@@ -29,6 +29,7 @@ function logout() {
 }
 
 async function login(credentials) {
+  console.log('CRED ----> ', credentials)
   try {
     const res = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
@@ -49,4 +50,9 @@ async function login(credentials) {
 }
 
 
-export { signup, getUser, logout, login }
+export { 
+  signup,
+  getUser, 
+  logout,
+  login 
+  }
