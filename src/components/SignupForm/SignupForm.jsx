@@ -41,7 +41,7 @@ const SignupForm = props => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className='text-gray-300 bg-gray-600/[.3] rounded p-3'
+      className='text-amber-500 bg-gray-600/[.45] rounded p-3'
     >
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>

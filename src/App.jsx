@@ -24,6 +24,8 @@ const App = () => {
 
   return (
     <>
+    {/* <div className="bg-cover bg-[url('https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg')]"> */}
+    <div className="bg-cover bg-[url('https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg')]">
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -40,6 +42,7 @@ const App = () => {
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
       </Routes>
+    </div>
     </>
   )
 }
