@@ -9,33 +9,35 @@ import Reviews from './pages/Reviews/reviews'
 import * as authService from './services/authService'
 
 const backgrounds = [
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP821010.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP835833.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP812936.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DP328558.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP853518.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP152246.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP155035.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP803410.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP202998.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP822502.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP339363.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP822251.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP810124.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/gr/original/DP337492.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP228765.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP827783.jpg)]',
-  'bg-cover bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP836919.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP821010.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP835833.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP812936.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DP328558.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP853518.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP152246.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP155035.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP803410.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP202998.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP822502.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP339363.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP822251.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP810124.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/gr/original/DP337492.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP228765.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP827783.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP146144.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DT5662.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP819192.jpg)]',
 ]
 
 const App = () => {
