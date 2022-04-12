@@ -50,6 +50,7 @@ const backgrounds = [
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP815781.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP274777.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP874326.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DP276131.jpg)]',
 ]
 
 const App = () => {
