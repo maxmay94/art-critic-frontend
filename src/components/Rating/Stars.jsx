@@ -11,13 +11,11 @@ const Stars = () => {
           <button
             type='button'
             key={i}
-            className={i <= rating ? 'text-yellow-400' : 'text-black/[.4]'}
+            className={i <= (hover || rating) ? 'text-yellow-400' : 'text-black/[.4]'}
             onClick={() => setRating(i)}
             onMouseEnter={() => setHover(i)}
             onMouseLeave={() => setHover(rating)}
           >
-            {/* <span className='star'>&#9889;</span> */}
-            {/* <span className='star'>U+0488;</span> */}
             <span className='star'>&#9733;</span>
           </button>
         )

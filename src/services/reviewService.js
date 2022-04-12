@@ -9,8 +9,8 @@ export async function getAllReviews() {
   return await res.json()
 }
 
-export async function addReview(review, art_id) {
-  console.log('reviewService ---> addReview')
+export async function addReview(review) {
+  console.log('@@@@ reviewService : addReview @@@@: ', review)
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: 'POST',
@@ -21,7 +21,6 @@ export async function addReview(review, art_id) {
       body: JSON.stringify(review)
     })
     return await res.json()
-
   } catch(err) {
     throw err
   }
