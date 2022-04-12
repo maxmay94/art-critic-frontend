@@ -27,9 +27,9 @@ const Reviews = ({user}) => {
 
   return (
     <div className="flex-auto text-center min-h-screen">
-      <h1 className="rounded-sm m-20 font-semibold text-6xl text-white bg-red-800/[.8]"> <button onClick={() => {getArtData(rand)}} >view a random work of art</button> </h1>
-      <div className='flex m-10 p-10 bg-black/[.9]'>
-        <img className='max-h-max max-w-full self-center' src={art.primaryImage} alt="" />
+      <h1 className="rounded-sm m-20 font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> <button onClick={() => {getArtData(rand)}} >view a random work of art</button> </h1>
+      <div className='flex justify-center m-20 p-10 max-w-fit bg-black/[.8]'>
+        <img className='items-center max-h-96 justify-center rounded-sm' src={art.primaryImage} alt="" />
       </div>
     </div>
   )
