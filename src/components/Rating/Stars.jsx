@@ -4,7 +4,7 @@ const Stars = () => {
   const [rating, setRating] = useState(0)
   const [hover, setHover] = useState(0)
   return (
-    <div className='text-2xl'>
+    <div className='text-2xl text-left'>
       {[...Array(5)].map((star, i) => {
         i += 1
         return (
@@ -16,6 +16,8 @@ const Stars = () => {
             onMouseEnter={() => setHover(i)}
             onMouseLeave={() => setHover(rating)}
           >
+            {/* <span className='star'>&#9889;</span> */}
+            {/* <span className='star'>U+0488;</span> */}
             <span className='star'>&#9733;</span>
           </button>
         )

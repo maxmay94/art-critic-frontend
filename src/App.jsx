@@ -18,6 +18,15 @@ const backgrounds = [
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-002.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg)]', // fav
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-004.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP821010.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP835833.jpg)]',
@@ -38,6 +47,8 @@ const backgrounds = [
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP146144.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DT5662.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP819192.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP884236.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/rl/original/DP-19531-036.jpg)]',
 ]
 
 const App = () => {
@@ -57,7 +68,6 @@ const App = () => {
 
   return (
     <>
-    {/* <div className="bg-cover bg-[url('https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-003.jpg')]"> */}
     <div className={backgrounds[Math.floor(Math.random() * backgrounds.length)]}>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
