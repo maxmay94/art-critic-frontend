@@ -19,7 +19,6 @@ const handleSubmit = async (evt) => {
 }
 
 const handleChange = (e) => {
-  console.log('rating: ', rating)
   setForm({ ...form, [e.target.name]: e.target.value })
 }
 

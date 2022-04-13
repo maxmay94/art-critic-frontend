@@ -10,7 +10,7 @@ const LoginPage = props => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className="min-h-screen">
       <div className='text-amber-500 font-extrabold'>
         <h1>Log In</h1>
         <p>{message}</p>
