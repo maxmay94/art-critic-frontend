@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import Reviews from './pages/Reviews/reviews'
 import ReviewIndex from './pages/Reviews/ReviewIndex'
+
 import * as authService from './services/authService'
 import * as reviewService from './services/reviewService'
 
@@ -53,6 +54,7 @@ const backgrounds = [
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ph/original/DP274777.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/dp/original/DP874326.jpg)]',
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/DP276131.jpg)]',
+  'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/rl/original/DP-19531-017.jpg)]',
 ]
 
 const App = () => {
@@ -77,6 +79,11 @@ const App = () => {
   const addReview = async (reviewData) => {
     const review = await reviewService.addReview(reviewData)
     setReviews([...reviews, review])
+  }
+
+  const deleteReview = async (id) => {
+    await reviewService.deleteOne(id)
+    setReviews(reviews.filter(review => review.id !== parseInt(id)))
   }
 
   const handleSignupOrLogin = () => {
@@ -107,7 +114,7 @@ const App = () => {
         />
         <Route 
           path='/reviews/index'
-          element={user? <ReviewIndex reviews={reviews} user={user}/> :  <Navigate to='/login' />}
+          element={user? <ReviewIndex reviews={reviews} user={user} deleteReview={deleteReview}/> :  <Navigate to='/login' />}
         />
       </Routes>
     </div>

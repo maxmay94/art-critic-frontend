@@ -1,6 +1,6 @@
 import ReviewCard from "../../components/Cards/ReviewCard"
 
-const ReviewIndex = ({user, reviews}) => {
+const ReviewIndex = ({user, reviews, deleteReview}) => {
   console.log('REVIEWS ',reviews)
   return(
     <>
@@ -10,17 +10,17 @@ const ReviewIndex = ({user, reviews}) => {
           {reviews ?
             reviews.map((review, i) => (
               review.art_id &&
-              <div className="group relative" >
+              <div key={review.id} className="group relative" >
                 <ReviewCard 
                   review={review}
                   user={user}
-                  key={review.id + i}
+                  deleteReview={deleteReview}
                 />
               </div>
           ))
           :
             <div> 
-              <h1>no reviews yet.</h1>
+              <h1 className='mx-20 my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> no reviews yet. </h1>
             </div>
           }
         </div>

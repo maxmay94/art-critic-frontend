@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const API_URL = process.env.REACT_APP_MET_API
 
-const ReviewCard = ({review, user}) => {
+const ReviewCard = ({review, user, deleteReview}) => {
+  const navigate = useNavigate()
   const [art, setArt] = useState({})
 
   function getArtData(artId) {
@@ -10,6 +12,11 @@ const ReviewCard = ({review, user}) => {
       .then((res) => res.json())
       .then(data => setArt(data))
       .catch(err => console.log('ERROR',err))
+  }
+
+  function handleDelete(){
+    console.log('HANDLE DELETE REVIEW', review.id)
+    deleteReview(review.id)
   }
 
   useEffect(() => {
@@ -29,9 +36,9 @@ const ReviewCard = ({review, user}) => {
             <div className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex">
               {
                 user.id === review.profile_id &&
-                <div class='flex'>
-                  <button className='bg-yellow-100/[.9] hover:bg-yellow-400/[.9] text-black px-5 rounded-sm max-h-5 max-w-5 text-sm' >edit.</button>
-                  <button className='bg-red-100/[.9] hover:bg-red-400/[.9] text-black px-5 rounded-sm max-h-5 max-w-5 text-sm' >delete.</button>
+                <div className='flex'>
+                  <button onClick={() => navigate(`/reviews/${review.id}/edit`, { state: review })} className='bg-yellow-100/[.9] hover:bg-yellow-400/[.9] text-black px-5 rounded-sm max-h-5 max-w-5 text-sm' >edit.</button>
+                  <button onClick={handleDelete} className='bg-red-100/[.9] hover:bg-red-400/[.9] text-black px-5 rounded-sm max-h-5 max-w-5 text-sm' >delete.</button>
                 </div>
               }
             </div>
