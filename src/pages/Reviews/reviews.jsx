@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import ReviewForm from '../../components/Forms/ReviewForm'
 
 
-const API_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'
+const API_URL = process.env.REACT_APP_MET_API
 let rand = Math.round(Math.random() * 856655)
 
 const Reviews = ({user}) => {
@@ -13,8 +13,10 @@ const Reviews = ({user}) => {
     getArtData(rand)
   }, [])
 
+  console.log('user:::',user)
+
   useEffect(() => {
-    console.log('useEffect() art ---> ', art)
+    console.log('useEffect() art ---> ', art.primaryImage)
   }, [art])
 
   function getArtData(rand) {
@@ -30,7 +32,7 @@ const Reviews = ({user}) => {
 
   return (
     <div className="flex-auto justify-center text-center min-h-screen">
-      <h1 className="rounded-sm mx-20 my-5 font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> behold </h1>
+      <h1 className="rounded-sm mx-20 my-5--| font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> behold </h1>
 
       {/* <button onClick={() => {getArtData(rand)}} >behold</button>  */}
       {/* ^^ previously in h1 above ^^ */}
@@ -50,7 +52,7 @@ const Reviews = ({user}) => {
               <div>
               </div>
               <div className='m-5 justify-right'>
-                <ReviewForm art={art}/>
+                <ReviewForm art={art} user={user}/>
               </div>
             </div>
   

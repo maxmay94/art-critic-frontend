@@ -5,10 +5,12 @@ import * as reviewService from '../../services/reviewService'
 
 const ReviewForm = (props) => {
   const navigate = useNavigate()
+  const [rating, setRating] = useState()
   const [form, setForm] = useState({
     text: '',
     rating: 0,
     art_id: 0,
+    user_id:props.user.id
   })
 
 const handleSubmit = async (evt) => {
@@ -18,7 +20,12 @@ const handleSubmit = async (evt) => {
 }
 
 const handleChange = (e) => {
+  console.log('rating: ', rating)
   setForm({ ...form, [e.target.name]: e.target.value })
+}
+
+const getRating = (starsData) => {
+  this.setState({rating: starsData})
 }
 
 useEffect(() => {
@@ -30,9 +37,7 @@ useEffect(() => {
       <form onSubmit={handleSubmit}>
         
         <br />
-        <Stars onChange={handleChange}
-          value={form.rating}
-         />
+        <Stars rating={getRating} onChange={setRating} />
         <textarea className='bg-white/[.7] rounded mt-2' 
           name="text" id="text" 
           cols="30" rows="2" 
