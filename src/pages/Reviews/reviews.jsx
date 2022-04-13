@@ -30,7 +30,7 @@ const Reviews = ({user}) => {
 
   return (
     <div className="flex-auto justify-center text-center min-h-screen">
-      <h1 className="rounded-sm mx-20 my-5 font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> behold </h1>
+      <h1 className='mx-20 my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> behold. </h1>
 
       {/* <button onClick={() => {getArtData(rand)}} >behold</button>  */}
       {/* ^^ previously in h1 above ^^ */}
@@ -43,8 +43,8 @@ const Reviews = ({user}) => {
                 <img className='items-center max-h-92 justify-center rounded-sm' src={art.primaryImage} alt="" />
                 <br />
                 <p className='text-xs text-left'>{art.artistDisplayName && art.artistDisplayName}</p>
-                <p className='text-xs text-left'>{art.artistDisplayBio && art.artistDisplayBio}</p>
                 <p className='text-xs text-left'>{art.title}</p>
+                <p className='text-xs text-left'>{art.artistDisplayBio && art.artistDisplayBio}</p>
                 <p className='text-xs text-left'>{art.objectDate}</p>
               </div>
               <div>

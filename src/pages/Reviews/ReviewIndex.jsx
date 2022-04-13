@@ -1,16 +1,31 @@
 import ReviewCard from "../../components/Cards/ReviewCard"
 
 const ReviewIndex = ({user, reviews}) => {
+  console.log('REVIEWS ',reviews)
   return(
-    <div className="flex-wrap min-h-screen">
-      {reviews &&
-        reviews.map((review, i) => (
-        <ReviewCard 
-          review={review}
-          key={review.id + i}
-        />
-      ))}
-    </div>
+    <>
+      <h1 className='mx-20 my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> judgement. </h1>
+      <div className="bg-black/[.6] p-5 lg:mx-20 sm:mx-5 min-h-full rounded">
+        <div className="m-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+          {reviews ?
+            reviews.map((review, i) => (
+              review.art_id &&
+              <div className="group relative" >
+                <ReviewCard 
+                  review={review}
+                  user={user}
+                  key={review.id + i}
+                />
+              </div>
+          ))
+          :
+            <div> 
+              <h1>no reviews yet.</h1>
+            </div>
+          }
+        </div>
+      </div>
+    </>
   )
 }
 
