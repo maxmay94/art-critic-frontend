@@ -13,8 +13,6 @@ const Reviews = ({user}) => {
     getArtData(rand)
   }, [])
 
-  console.log('user:::',user)
-
   useEffect(() => {
     console.log('useEffect() art ---> ', art.primaryImage)
   }, [art])
@@ -32,7 +30,7 @@ const Reviews = ({user}) => {
 
   return (
     <div className="flex-auto justify-center text-center min-h-screen">
-      <h1 className="rounded-sm mx-20 my-5--| font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> behold </h1>
+      <h1 className="rounded-sm mx-20 my-5 font-semibold text-6xl text-white/[.8] bg-red-800/[.45] hover:bg-red-800/[.7] hover:text-orange-500/[.9]"> behold </h1>
 
       {/* <button onClick={() => {getArtData(rand)}} >behold</button>  */}
       {/* ^^ previously in h1 above ^^ */}

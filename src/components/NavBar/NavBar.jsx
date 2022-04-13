@@ -9,6 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
             <ul className='flex flex-row'>
               <li className='grow m-2'><Link className='font-bold hover:text-orange-500' to='/'>{user.name.toLowerCase()}</Link></li>
               <li className='grow m-2'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/reviews/new">write a review</Link></li>
+              <li className='grow m-2'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/reviews/index">reviews</Link></li>
               <li className='m-2'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="" onClick={handleLogout}>log out</Link></li>
             </ul>
           </nav>

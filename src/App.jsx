@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -6,7 +6,9 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import Reviews from './pages/Reviews/reviews'
+import ReviewIndex from './pages/Reviews/ReviewIndex'
 import * as authService from './services/authService'
+import * as reviewService from './services/reviewService'
 
 const backgrounds = [
   'bg-cover bg-center bg-[url(https://images.metmuseum.org/CRDImages/ep/original/LC-EP_1993_132_suppl_CH-001.jpg)]',
@@ -56,12 +58,25 @@ const backgrounds = [
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  console.log(user)
+  const [reviews, setReviews] = useState([])
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const data = await reviewService.getAll()
+      setReviews(data)
+    }
+    fetchData()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
     setUser(null)
     navigate('/')
+  }
+
+  const addReview = async (reviewData) => {
+    const review = await reviewService.addReview(reviewData)
+    setReviews([...reviews, review])
   }
 
   const handleSignupOrLogin = () => {
@@ -88,7 +103,11 @@ const App = () => {
         />
         <Route 
           path='/reviews/new'
-          element={user? <Reviews user={user} /> : <Navigate to='/login' />} 
+          element={user? <Reviews user={user} addReview={addReview}/> : <Navigate to='/login' />} 
+        />
+        <Route 
+          path='/reviews/index'
+          element={user? <ReviewIndex reviews={reviews} user={user}/> :  <Navigate to='/login' />}
         />
       </Routes>
     </div>
