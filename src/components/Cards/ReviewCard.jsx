@@ -21,10 +21,10 @@ const ReviewCard = ({review, user}) => {
     <div className="w-full min-h-80 bg-gray-200 rounded overflow-hidden group-hover:opacity-75 group-hover:scale-110 lg:h-80 lg:aspect-none">
         <div>
           <img className='w-full h-full  object-cover lg:w-full lg:h-full' src={art.primaryImage} alt="" />
-          
+
           <div className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-6xl text-white font-semibold">
 
-            <p className={review.text.length > 25 ? 'text-base bg-black/[.9]' : 'bg-black/[.9]'}>{review.text}</p>
+            <p className={review.text.length > 35 ? 'text-base bg-black/[.9]' : 'bg-black/[.9]'}>{review.text}</p>
 
             <div className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex">
               {
