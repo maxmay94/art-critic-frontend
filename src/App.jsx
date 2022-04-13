@@ -6,6 +6,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import Reviews from './pages/Reviews/reviews'
+import EditReview from './pages/Reviews/EditReview'
 import ReviewIndex from './pages/Reviews/ReviewIndex'
 
 import * as authService from './services/authService'
@@ -81,6 +82,14 @@ const App = () => {
     setReviews([...reviews, review])
   }
 
+  const editReview = async (reviewData) => {
+    console.log('xxxxxxxxxx  editReview --> reviewData : ', reviewData)
+    const updatedReview = await reviewService.update(reviewData)
+    setReviews(reviews.map((review) => (
+      review.id === updatedReview.id ? updatedReview : review
+    )))
+  }
+
   const deleteReview = async (id) => {
     await reviewService.deleteOne(id)
     setReviews(reviews.filter(review => review.id !== parseInt(id)))
@@ -114,7 +123,11 @@ const App = () => {
         />
         <Route 
           path='/reviews/index'
-          element={user? <ReviewIndex reviews={reviews} user={user} deleteReview={deleteReview}/> :  <Navigate to='/login' />}
+          element={user? <ReviewIndex reviews={reviews} user={user} deleteReview={deleteReview} editReview={editReview}/> :  <Navigate to='/login' />}
+        />
+        <Route
+          path='/reviews/:id/edit'
+          element={user? <EditReview user={user} editReview={editReview} /> : <Navigate to='/login' />}
         />
       </Routes>
     </div>

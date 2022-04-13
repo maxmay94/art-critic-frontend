@@ -10,7 +10,7 @@ const LoginPage = props => {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="flex justify-center min-h-screen">
       <div className='text-amber-500 font-extrabold'>
         <h1>Log In</h1>
         <p>{message}</p>

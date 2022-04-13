@@ -10,7 +10,7 @@ const Signup = props => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className="min-h-full flex justify-center">
       <h1>Sign Up</h1>
       <p>{message}</p>
       <SignupForm {...props} updateMessage={updateMessage} />
