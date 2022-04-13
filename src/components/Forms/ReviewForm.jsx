@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import Stars from '../../components/Rating/Stars.jsx'
 import * as reviewService from '../../services/reviewService'
 
@@ -17,6 +17,7 @@ const handleSubmit = async (evt) => {
   evt.preventDefault()
   form.art_id = props.art.objectID
   reviewService.addReview(form)
+  
 }
 
 const handleChange = (e) => {
@@ -27,10 +28,6 @@ const handleChange = (e) => {
 const getRating = (starsData) => {
   this.setState({rating: starsData})
 }
-
-useEffect(() => {
-
-}, [])
 
   return(
     <div>

@@ -53,7 +53,6 @@ const Reviews = ({user}) => {
                 <ReviewForm art={art} user={user}/>
               </div>
             </div>
-  
           :
             <div className='loader animate-pulse'><img src="../loading.png" width='200' height='200' alt="" /></div>
         }
