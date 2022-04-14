@@ -31,11 +31,12 @@ const Reviews = ({user, addReview}) => {
     <div className="flex-auto justify-center text-center min-h-screen">
       <h1 className='m-5 lg:mx-20 lg:my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> behold. </h1>
 
-      <div className='m-5 lg:mx-20 lg:my-5 flex justify-center rounded bg-black/[.4]'>
+      <div className='m-5 lg:mx-20 lg:my-5 flex justify-center rounded bg-black/[.4]  '>
         {
           art.title ?
-            <div className='flex rounded-sm justify-center m-20 p-10 max-w-fit bg-white/[.9]'>
-              <div>
+            <div className='rounded-sm justify-center p-10 max-h-screen overflow-scroll'>
+
+              <div className='bg-white/[.9] p-10'>
                 <img className='items-center max-h-92 justify-center rounded-sm' src={art.primaryImage} alt="" />
                 <br />
                 <p className='text-xs text-left'>{art.artistDisplayName && art.artistDisplayName}</p>
@@ -43,11 +44,11 @@ const Reviews = ({user, addReview}) => {
                 <p className='text-xs text-left'>{art.artistDisplayBio && art.artistDisplayBio}</p>
                 <p className='text-xs text-left'>{art.objectDate}</p>
               </div>
-              <div>
-              </div>
-              <div className='m-5 justify-right'>
+
+              <div className='mt-10'>
                 <ReviewForm art={art} user={user} addReview={addReview}/>
               </div>
+
             </div>
           :
             <div className='loader animate-pulse'><img src="../loading.png" width='200' height='200' alt="" /></div>

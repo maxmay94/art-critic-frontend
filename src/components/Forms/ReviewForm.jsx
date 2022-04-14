@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import Stars from '../../components/Rating/Stars.jsx'
 
 const ReviewForm = (props) => {
-  const [rating, setRating] = useState()
   const [form, setForm] = useState({
     text: '',
     rating: 0,
@@ -10,38 +8,31 @@ const ReviewForm = (props) => {
     user_id:props.user.id
   })
 
-const handleSubmit = async (evt) => {
-  evt.preventDefault()
-  form.art_id = props.art.objectID
-  props.addReview(form)
-}
+  useEffect(() => {
+    // something to make it reset
+  },[])
 
-useEffect(() => {
-  // something to make it reset
-})
+  const handleSubmit = async (evt) => {
+    evt.preventDefault()
+    form.art_id = props.art.objectID
+    props.addReview(form)
+  }
 
-const handleChange = (e) => {
-  setForm({ ...form, [e.target.name]: e.target.value })
-}
-
-const getRating = (starsData) => {
-  this.setState({rating: starsData})
-}
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
   return(
-    <div>
-      <form onSubmit={handleSubmit}>
-        
-        <br />
-        <Stars rating={getRating} onChange={setRating} />
-        <textarea className='bg-white/[.7] rounded mt-2' 
+    <div className='flex flex-col min-h-full rounded-sm'>
+      <h1 className='bg-amber-400/[.7] text-blue-600/[.9] hover:bg-blue-600/[.7] hover:text-amber-400/[.9] font-semibold text-3xl lg:text-5xl text-left'>share a few choice words.</h1>
+      <form onSubmit={handleSubmit} >
+        <textarea className='bg-black/[.7] text-white rounded-sm mt-2 text-4xl w-full font-semibold border-0' 
           name="text" id="text" 
-          cols="30" rows="2" 
           onChange={handleChange}
           value={form.text}
         ></textarea>
         <br />
-        <button className='bg-white/[.6] hover:bg-green-100 rounded-sm p-1'>Submit Review</button>
+        <button className='bg-green-100/[.45] hover:bg-green-300/[.4] font-semibold min-w-full rounded-sm p-1'>Submit Review</button>
       </form>
     </div>
   )
