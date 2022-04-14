@@ -1,4 +1,4 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate, Navigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getOne } from '../../services/reviewService'
 
@@ -6,6 +6,7 @@ const API_URL = process.env.REACT_APP_MET_API
 
 const EditReview = ({user, editReview}) => {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const [art, setArt] = useState({})
   const [form, setForm] = useState({
@@ -25,9 +26,8 @@ const EditReview = ({user, editReview}) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    // form.art_id = art.objectID
     editReview(form)
-    // return <Navigate to='/reviews/index' />
+    navigate('/reviews/index')
   }
 
   const handleChange = (evt) => {
@@ -46,26 +46,21 @@ const EditReview = ({user, editReview}) => {
     fetchOne()
   }, [id])
 
+
   return(
-    <div className='min-h-screen'>
-        <h1 className='m-5 lg:mx-20 lg:my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> edit. </h1>
-        <div className='m-5 lg:mx-20 lg:my-5 bg-black/[.8]'>
-          {
-            art &&
-            <img src={art.primaryImage} alt="" />
-          }
-          <form onSubmit={handleSubmit}>
-            <textarea className='bg-white/[.7] rounded mt-2' 
-              name="text" id="text" 
-              defaultValue={form.text}
-              cols="30" rows="2" 
-              onChange={handleChange}
-            >   
-            </textarea>
-            <br />
-            <button className='rounded-sm bg-red-800 text-red-400' onClick={() => <Navigate to='/reviews/index' />}>submit</button>
-          </form>
-        </div>
+    <div className='m-5 md:m-10 lg:m-20 min-h-screen'>
+      <div className='flex flex-col min-h-full rounded-sm'>
+        <h1 className='bg-amber-400/[.7] text-blue-600/[.9] hover:bg-blue-600/[.7] hover:text-amber-400/[.9] font-semibold text-5xl lg:text-6xl text-left'>change your mind.</h1>
+        <form onSubmit={handleSubmit} >
+          <textarea className='bg-black/[.7] text-white rounded-sm mt-2 text-4xl w-full font-semibold border-0' 
+            name="text" id="text" 
+            onChange={handleChange}
+            value={form.text}
+          ></textarea>
+          <br />
+          <button className='bg-green-100/[.45] hover:bg-green-300/[.4] text-white/[.8] hover:text-pink-500/[.8] font-semibold min-w-full text-4xl rounded-sm p-1'>Submit Review</button>
+        </form>
+      </div>
     </div>
   )
 }

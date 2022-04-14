@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ReviewForm from '../../components/Forms/ReviewForm'
 
 
@@ -11,10 +12,6 @@ const Reviews = ({user, addReview}) => {
   useEffect(() => {
     getArtData(rand)
   },[])
-
-  // useEffect(() => {
-
-  // }, [art])
 
   function getArtData(rand) {
     fetch(`${API_URL + rand}`)

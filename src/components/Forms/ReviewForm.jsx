@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const ReviewForm = (props) => {
+
   const [form, setForm] = useState({
     text: '',
     rating: 0,
@@ -18,6 +19,10 @@ const ReviewForm = (props) => {
     props.addReview(form)
   }
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
@@ -32,7 +37,7 @@ const ReviewForm = (props) => {
           value={form.text}
         ></textarea>
         <br />
-        <button className='bg-green-100/[.45] hover:bg-green-300/[.4] font-semibold min-w-full rounded-sm p-1'>Submit Review</button>
+        <button className='bg-green-100/[.45] hover:bg-green-300/[.4] text-white/[.8] hover:text-pink-500/[.8] font-semibold min-w-full text-4xl rounded-sm p-1' onClick={refreshPage}>Submit Review</button>
       </form>
     </div>
   )
