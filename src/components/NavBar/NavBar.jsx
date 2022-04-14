@@ -16,8 +16,8 @@ const NavBar = ({ user, handleLogout }) => {
         :
           <nav>
             <ul className='flex flex-row'>
-              <li className='m-2 hover:text-black'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/login">Log In</Link></li>
-              <li className='m-2 hover:text-black'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/signup">Sign Up</Link></li>
+              <li className='m-2 hover:text-black'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/login">log in.</Link></li>
+              <li className='m-2 hover:text-black'><Link className='hover:text-orange-500 bg-gray-700/[.8] p-2 rounded-sm' to="/signup">sign up.</Link></li>
             </ul>
           </nav>
         }

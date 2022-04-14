@@ -35,7 +35,7 @@ const LoginForm = props => {
             className='rounded-sm font-semibold text-xl bg-cyan-700/[.6] hover:bg-emerald-800/[.6] text-amber-100 hover:text-yellow-400 w-full'
           >
             <div className='p-2 text-center'>
-              <label htmlFor="email" className=''>Email</label>
+              <label htmlFor="email" className=''>email</label>
               <br />
               <input
                 type="text"
@@ -48,7 +48,7 @@ const LoginForm = props => {
               />
             </div>
             <div className='p-2 text-center'>
-              <label htmlFor="password" className=''>Password</label>
+              <label htmlFor="password" className=''>password</label>
               <br />
               <input
                 type="password"
@@ -61,9 +61,9 @@ const LoginForm = props => {
               />
             </div>
             <div className='p-2 flex flex-col'>
-              <button className='bg-green-200/[.3] hover:bg-green-600/[.5] font-semibold rounded-sm'>Log In</button>
+              <button className='bg-green-200/[.3] hover:bg-green-600/[.5] font-semibold rounded-sm'>log in.</button>
               <Link to="/">
-                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>Cancel</button>
+                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>cancel.</button>
               </Link>
             </div>
           </form>

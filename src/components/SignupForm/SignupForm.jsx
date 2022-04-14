@@ -101,10 +101,10 @@ const SignupForm = props => {
             </div>
             <div className='p-2 flex flex-col'>
               <button disabled={isFormInvalid()} className='bg-green-200/[.3] hover:bg-green-600/[.5] font-semibold rounded-sm'>
-                Sign Up
+                sign up.
               </button>
               <Link to="/">
-                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>Cancel</button>
+                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>cancel.</button>
               </Link>
             </div>
           </form>
