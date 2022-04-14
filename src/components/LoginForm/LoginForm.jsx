@@ -26,42 +26,52 @@ const LoginForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className='text-amber-500 bg-gray-600/[.45] rounded p-3'
-    >
-      <div className=''>
-        <label htmlFor="email" className=''>Email</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="email"
-          value={formData.email}
-          name="email"
-          onChange={handleChange}
-          className='bg-black border-gray-600 rounded-sm'
-        />
+    <div className="min-h-screen">
+      <div className='mx-5 sm:mx-10 lg:mx-20'>
+        <div className='flex flex-col items-center w-full'>
+          <form
+            autoComplete="off"
+            onSubmit={handleSubmit}
+            className='rounded-sm font-semibold text-xl bg-cyan-700/[.6] hover:bg-emerald-800/[.6] text-amber-100 hover:text-yellow-400 w-full'
+          >
+            <div className='p-2 text-center'>
+              <label htmlFor="email" className=''>Email</label>
+              <br />
+              <input
+                type="text"
+                autoComplete="off"
+                id="email"
+                value={formData.email}
+                name="email"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
+              />
+            </div>
+            <div className='p-2 text-center'>
+              <label htmlFor="password" className=''>Password</label>
+              <br />
+              <input
+                type="password"
+                autoComplete="off"
+                id="password"
+                value={formData.password}
+                name="password"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
+              />
+            </div>
+            <div className='p-2 flex flex-col'>
+              <button className='bg-green-200/[.3] hover:bg-green-600/[.5] font-semibold rounded-sm'>Log In</button>
+              <Link to="/">
+                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>Cancel</button>
+              </Link>
+            </div>
+          </form>
+
+        </div>
       </div>
-      <div className=''>
-        <label htmlFor="password" className=''>Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={formData.password}
-          name="password"
-          onChange={handleChange}
-          className='bg-black border-gray-600 rounded-sm'
-        />
-      </div>
-      <div>
-        <button className=''>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+    </div>
+    
   )
 }
 
