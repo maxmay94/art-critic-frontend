@@ -83,7 +83,8 @@ const App = () => {
   }
 
   const editReview = async (reviewData) => {
-    console.log('xxxxxxxxxx  editReview --> reviewData : ', reviewData)
+    console.log('@@@@@@@@ editReview app.jsx @@@@@@@ ',reviewData)
+
     const updatedReview = await reviewService.update(reviewData)
     setReviews(reviews.map((review) => (
       review.id === updatedReview.id ? updatedReview : review

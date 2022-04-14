@@ -12,6 +12,17 @@ export async function getAll() {
   }
 }
 
+export const getOne = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}${id}`, {
+      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
 export async function addReview(review) {
   try {
     const res = await fetch(BASE_URL, {

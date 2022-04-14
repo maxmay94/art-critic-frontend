@@ -12,9 +12,9 @@ const Reviews = ({user, addReview}) => {
     getArtData(rand)
   },[])
 
-  useEffect(() => {
-    console.log('useEffect() art ---> ', art.primaryImage)
-  }, [art])
+  // useEffect(() => {
+
+  // }, [art])
 
   function getArtData(rand) {
     fetch(`${API_URL + rand}`)
@@ -29,9 +29,9 @@ const Reviews = ({user, addReview}) => {
 
   return (
     <div className="flex-auto justify-center text-center min-h-screen">
-      <h1 className='mx-20 my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> behold. </h1>
+      <h1 className='m-5 lg:mx-20 lg:my-5 font-semibold rounded-sm border-0 bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] text-6xl'> behold. </h1>
 
-      <div className='flex justify-center rounded ml-20 mr-20 bg-black/[.4]'>
+      <div className='m-5 lg:mx-20 lg:my-5 flex justify-center rounded bg-black/[.4]'>
         {
           art.title ?
             <div className='flex rounded-sm justify-center m-20 p-10 max-w-fit bg-white/[.9]'>

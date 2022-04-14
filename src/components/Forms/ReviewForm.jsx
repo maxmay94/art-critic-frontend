@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
 import Stars from '../../components/Rating/Stars.jsx'
 
 const ReviewForm = (props) => {
-  const navigate = useNavigate()
   const [rating, setRating] = useState()
   const [form, setForm] = useState({
     text: '',
@@ -17,6 +15,10 @@ const handleSubmit = async (evt) => {
   form.art_id = props.art.objectID
   props.addReview(form)
 }
+
+useEffect(() => {
+  // something to make it reset
+})
 
 const handleChange = (e) => {
   setForm({ ...form, [e.target.name]: e.target.value })
