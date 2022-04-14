@@ -9,15 +9,18 @@ const LoginPage = props => {
   }
 
   return (
-    <main className="flex justify-center min-h-screen">
-      <div className='text-amber-500 font-extrabold'>
-        <h1>Log In</h1>
+    <main className="flex flex-col min-h-screen">
+      <h1 className='m-5 sm:mx-10 md:mx-10 lg:mx-20 
+            font-semibold rounded-sm border-0 
+            bg-amber-500/[.7] text-black/[.8] hover:text-white/[.8] 
+            text-4xl md:text-6xl'
+        >
+          log in.</h1>
         <p>{message}</p>
         <LoginForm
           handleSignupOrLogin={props.handleSignupOrLogin}
           updateMessage={updateMessage}
         />
-      </div>
     </main>
   )
 }

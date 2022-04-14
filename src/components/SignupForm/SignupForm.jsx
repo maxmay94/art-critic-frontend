@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.module.css'
 import * as authService from '../../services/authService'
 
 const SignupForm = props => {
@@ -39,70 +38,78 @@ const SignupForm = props => {
 
   return (
     <div className="min-h-screen">
-      <form
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        className='text-amber-500 bg-gray-600/[.45] rounded p-3'
-      >
-        <div className={styles.inputContainer}>
-          <label htmlFor="name" className={styles.label}>Name</label>
-          <input
-            type="text"
+      <div className='mx-5 sm:mx-10 lg:mx-20'>
+        <div className='flex flex-col items-center w-full'>
+          <form
             autoComplete="off"
-            id="name"
-            value={name}
-            name="name"
-            onChange={handleChange}
-            className='bg-black border-gray-600 rounded-sm'
-          />
+            onSubmit={handleSubmit}
+            className='font-semibold text-xl bg-cyan-700/[.6] hover:bg-emerald-800/[.6] text-amber-100 hover:text-yellow-400 w-full'
+          >
+            <div className='p-2'>
+              <label htmlFor="name" className='min-w-100'>Name</label>
+              <br />
+              <input
+                type="text"
+                autoComplete="off"
+                id="name"
+                value={name}
+                name="name"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+              />
+            </div>
+            <div className='p-2'>
+              <label htmlFor="email" className=''>Email</label>
+              <br />
+              <input
+                type="text"
+                autoComplete="off"
+                id="email"
+                value={email}
+                name="email"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+              />
+            </div>
+            <div className='p-2'>
+              <label htmlFor="password" className=''>Password</label>
+              <br />
+              <input
+                type="password"
+                autoComplete="off"
+                id="password"
+                value={password}
+                name="password"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+              />
+            </div>
+            <div className='p-2'>
+              <label htmlFor="confirm" className=''>
+                Confirm Password
+              </label>
+              <br />
+              <input
+                type="password"
+                autoComplete="off"
+                id="confirm"
+                value={passwordConf}
+                name="passwordConf"
+                onChange={handleChange}
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+              />
+            </div>
+            <div className='p-2 flex flex-col'>
+              <button disabled={isFormInvalid()} className='bg-green-200/[.3] hover:gb-green-600/[.3] font-semibold'>
+                Sign Up
+              </button>
+              <Link to="/">
+                <button className='bg-red-200/[.5] hover:gb-red-600/[.5] w-full font-semibold'>Cancel</button>
+              </Link>
+            </div>
+          </form>
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="email" className={styles.label}>Email</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="email"
-            value={email}
-            name="email"
-            onChange={handleChange}
-            className='bg-black border-gray-600 rounded-sm'
-          />
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="password" className={styles.label}>Password</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-            className='bg-black border-gray-600 rounded-sm'
-          />
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="confirm" className={styles.label}>
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="confirm"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-            className='bg-black border-gray-600 rounded-sm'
-          />
-        </div>
-        <div className={styles.inputContainer}>
-          <button disabled={isFormInvalid()} className={styles.button}>
-            Sign Up
-          </button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
-        </div>
-      </form>
+      </div>
     </div>
   )
 }
