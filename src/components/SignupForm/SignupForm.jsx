@@ -43,9 +43,9 @@ const SignupForm = props => {
           <form
             autoComplete="off"
             onSubmit={handleSubmit}
-            className='font-semibold text-xl bg-cyan-700/[.6] hover:bg-emerald-800/[.6] text-amber-100 hover:text-yellow-400 w-full'
+            className='rounded-sm font-semibold text-xl bg-cyan-700/[.6] hover:bg-emerald-800/[.6] text-amber-100 hover:text-yellow-400 w-full'
           >
-            <div className='p-2'>
+            <div className='p-2 text-center'>
               <label htmlFor="name" className='min-w-100'>Name</label>
               <br />
               <input
@@ -55,10 +55,10 @@ const SignupForm = props => {
                 value={name}
                 name="name"
                 onChange={handleChange}
-                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
               />
             </div>
-            <div className='p-2'>
+            <div className='p-2 text-center'>
               <label htmlFor="email" className=''>Email</label>
               <br />
               <input
@@ -68,10 +68,10 @@ const SignupForm = props => {
                 value={email}
                 name="email"
                 onChange={handleChange}
-                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
               />
             </div>
-            <div className='p-2'>
+            <div className='p-2 text-center'>
               <label htmlFor="password" className=''>Password</label>
               <br />
               <input
@@ -81,10 +81,10 @@ const SignupForm = props => {
                 value={password}
                 name="password"
                 onChange={handleChange}
-                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
               />
             </div>
-            <div className='p-2'>
+            <div className='p-2 text-center'>
               <label htmlFor="confirm" className=''>
                 Confirm Password
               </label>
@@ -96,15 +96,15 @@ const SignupForm = props => {
                 value={passwordConf}
                 name="passwordConf"
                 onChange={handleChange}
-                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 text-3xl'
+                className='bg-black/[.5] border-gray-600 rounded-sm text-amber-500 w-full text-3xl'
               />
             </div>
             <div className='p-2 flex flex-col'>
-              <button disabled={isFormInvalid()} className='bg-green-200/[.3] hover:gb-green-600/[.3] font-semibold'>
+              <button disabled={isFormInvalid()} className='bg-green-200/[.3] hover:bg-green-600/[.5] font-semibold rounded-sm'>
                 Sign Up
               </button>
               <Link to="/">
-                <button className='bg-red-200/[.5] hover:gb-red-600/[.5] w-full font-semibold'>Cancel</button>
+                <button className='bg-red-200/[.5] hover:bg-red-600/[.5] w-full font-semibold mt-2 rounded-sm'>Cancel</button>
               </Link>
             </div>
           </form>
