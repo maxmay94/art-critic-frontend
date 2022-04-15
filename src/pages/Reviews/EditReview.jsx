@@ -1,14 +1,14 @@
-import { Link, useParams, useNavigate, Navigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getOne } from '../../services/reviewService'
 
-const API_URL = process.env.REACT_APP_MET_API
+// const API_URL = process.env.REACT_APP_MET_API
 
 const EditReview = ({user, editReview}) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const [art, setArt] = useState({})
+  // const [art, setArt] = useState({})
   const [form, setForm] = useState({
     id: id,
     text: '',
@@ -17,12 +17,13 @@ const EditReview = ({user, editReview}) => {
     user_id:user.id
   })
 
-  function getArtData(artId) {
-    fetch(`${API_URL + artId}`)
-      .then((res) => res.json())
-      .then(data => setArt(data))
-      .catch(err => console.log('ERROR',err))
-  }
+  // COME BACK TO THIS
+  // function getArtData(artId) {
+  //   fetch(`${API_URL + artId}`)
+  //     .then((res) => res.json())
+  //     .then(data => setArt(data))
+  //     .catch(err => console.log('ERROR',err))
+  // }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
@@ -35,6 +36,7 @@ const EditReview = ({user, editReview}) => {
   }
 
   useEffect(() => {
+    // come back to this
     // getArtData(form.art_id)
   }, [form])
 

@@ -29,7 +29,6 @@ function logout() {
 }
 
 async function login(credentials) {
-  console.log('CRED ----> ', credentials)
   try {
     const res = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
@@ -37,7 +36,6 @@ async function login(credentials) {
       body: JSON.stringify(credentials),
     })
     const json = await res.json()
-    console.log(json)
     if (json.token) {
       tokenService.setToken(json.token)
     }
